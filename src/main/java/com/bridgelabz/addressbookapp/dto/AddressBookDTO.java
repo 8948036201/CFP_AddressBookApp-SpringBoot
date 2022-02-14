@@ -1,34 +1,30 @@
 package com.bridgelabz.addressbookapp.dto;
 
-public class AddressBookDTO {
+import lombok.ToString;
+
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Pattern;
+
+public @ToString class AddressBookDTO {
+
+    @Pattern(regexp = "^[A-Z]{1}[a-zA-Z\\s]{2,}$", message = "First Name is Invalid")
     public String first_name;
+
+    @Pattern(regexp = "^[A-Z]{1}[a-zA-Z\\s]{2,}$", message = "Last Name is Invalid")
     public String last_name;
+
+    @Min(value = 18, message = "Min Wage should be more than 18")
     public int age;
+
+    @Pattern(regexp = "^[A-Z]{1}[a-zA-Z\\s]{2,}$", message = "City name is Invalid")
     public String city;
+
+    @Pattern(regexp = "^[A-Z]{1}[a-zA-Z\\s]{2,}$", message = "State Name is Invalid")
     public String state;
+
+    @Pattern(regexp = "^[0-9]{6}$", message = "Zipcode is Invalid")
     public long zipcode;
+
+    @Pattern(regexp = "^[789]\\d{9}$", message = "Mobile Number should start with 7,8 or 9 and it should be 10 digit")
     public long phone_number;
-
-    public AddressBookDTO(String first_name, String last_name, int age, String city, String state, long zipcode, long phone_number) {
-        this.first_name = first_name;
-        this.last_name = last_name;
-        this.age = age;
-        this.city = city;
-        this.state = state;
-        this.zipcode = zipcode;
-        this.phone_number = phone_number;
-    }
-
-    @Override
-    public String toString() {
-        return "AddressBookDTO{" +
-                "first_name='" + first_name + '\'' +
-                ", last_name='" + last_name + '\'' +
-                ", age=" + age +
-                ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
-                ", zipcode=" + zipcode +
-                ", phone_number=" + phone_number +
-                '}';
-    }
 }
