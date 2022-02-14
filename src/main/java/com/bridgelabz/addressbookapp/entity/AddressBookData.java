@@ -3,8 +3,7 @@ package com.bridgelabz.addressbookapp.entity;
 import com.bridgelabz.addressbookapp.dto.AddressBookDTO;
 import lombok.Data;
 
-@Data
-public class AddressBookData {
+public @Data class AddressBookData {
     private int id;
     private String first_name;
     private String last_name;
