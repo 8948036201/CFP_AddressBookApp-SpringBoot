@@ -29,7 +29,7 @@ public class AddressBookService implements  IAddressBookService{
     }*/
 
     @Override
-    public AddressBookData getAddressBookDataById(int id) {
+    public AddressBookData getAddressBookDataById(long id) {
         return addressBookRepository
                 .findById(id)
                 .orElseThrow( () -> new AddressBookException("AddressBook with Id " +
@@ -44,14 +44,14 @@ public class AddressBookService implements  IAddressBookService{
     }
 
     @Override
-    public AddressBookData updateAddressBookData(int id,AddressBookDTO addressBookDTO) {
+    public AddressBookData updateAddressBookData(long id,AddressBookDTO addressBookDTO) {
         AddressBookData addressBookData = this.getAddressBookDataById(id);
         addressBookData.updateAddressBookData(addressBookDTO);
         return addressBookRepository.save(addressBookData);
     }
 
     @Override
-    public void deleteAddressBookData(int id) {
+    public void deleteAddressBookData(long id) {
         AddressBookData addressBookData = this.getAddressBookDataById(id);
         addressBookRepository.delete(addressBookData);
     }

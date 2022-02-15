@@ -14,7 +14,7 @@ public @ToString class AddressBookDTO {
     public String last_name;
 
     @Min(value = 18, message = "Min Wage should be more than 18")
-    public int age;
+    public long age;
 
     @Pattern(regexp = "^[A-Z]{1}[a-zA-Z\\s]{2,}$", message = "City name is Invalid")
     public String city;
@@ -23,8 +23,8 @@ public @ToString class AddressBookDTO {
     public String state;
 
     @Pattern(regexp = "^[0-9]{6}$", message = "Zipcode is Invalid")
-    public long zipcode;
+    public String zipcode;
 
     @Pattern(regexp = "^[789]\\d{9}$", message = "Mobile Number should start with 7,8 or 9 and it should be 10 digit")
-    public long phone_number;
+    public String phone_number;
 }

@@ -12,16 +12,16 @@ public @Data class AddressBookData {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private int id;
+    private long id;
 
 
     private String first_name;
     private String last_name;
-    private int age;
+    private long age;
     private String city;
     private String state;
-    private long zipcode;
-    private long phone_number;
+    private String zipcode;
+    private String phone_number;
 
     public AddressBookData() {}
 
